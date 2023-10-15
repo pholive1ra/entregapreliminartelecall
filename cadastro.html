@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="icon" type="image/x-icon" href="/imagens/telecall.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="./js/cadastro.js"> </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href= "/css/cadastro.css">
+    <title>AreaDoCliente</title>
+</head>
+<body>
+    <header>
+    <nav class="nav-bar">
+        <div class="logo">
+            <img src="/imagens/telecall.png"> <h1> Telecall</h1>
+        </div>
+        
+        <div class="login-button">
+            <button><a href="../index.html">Voltar ao início</a></button>
+        </div>
+
+    </header>
+    <div class="page">
+        <form method="POST" class="formCadastro">
+            <h1 class="area">Área de cadastro</h1>
+            <p>Digite os seus dados de acesso nos campos abaixo.</p><br>
+            <label for="nome">Nome:</label>
+            <input type="text" placeholder="Digite seu nome" autofocus="true" minlength="15" maxlength="60" required="Preencha o campo corretamente"  />   <br><br>
+            <label for="data">Data de Nascimento:</label> 
+            <input type="text" name="outra_data" id="outra_data" placeholder="Digite a Data de nascimento" maxlength="10" onkeypress="mascaraData( this, event )" autofocus="true" required="Preencha o campo corretamente" /> <br><br>
+            <label for="sexo">Sexo:</label> <br><br>
+            <input type="radio"  name="sex" value="masc" placeholder="" required="Preencha o campo corretamente" /> 
+            <label class="masc" for="sexo">Masculino</label> <br>
+            <input type="radio"  name="sex" value="fem"  placeholder="" required="Preencha o campo corretamente" />
+            <label class="fem" for="sexo">Feminino</label> <br>
+            <input type="radio"  name="sex" value="outros" placeholder="" required="Preencha o campo corretamente" />
+            <label class="outros" for="sexo">Outros</label> <br><br>
+            <label for="nome">Nome materno:</label>
+            <input type="text" placeholder="Digite o nome materno" autofocus="true" required="Preencha o campo corretamente" /> <br><br>
+            <label for="nome">CPF:</label>
+            <input type="text" oninput="mascara(this)" maxlength="11" placeholder="Digite seu CPF" autofocus="true" required="Preencha o campo corretamente" /> <br><br>
+            <label for="nome">Telefone Celular:</label>
+            <input type="tel" maxlength="15" onkeyup="handlePhone(event)" placeholder="Digite seu Telefone Celular" autofocus="true" required="Preencha o campo corretamente" /> <br><br>
+            <label for="nome">Telefone Fixo:</label>
+            <input  type="text" class="form-control" id="telefone" placeholder="Digite seu Telefone Fixo" maxlength="14" name="telefone" autofocus="true"  onkeypress="mask(this, mphone);" onblur="mask(this, mphone);" required="Preencha o campo corretamente" /> <br><br>
+            <hr>
+            <h1 class="endereco">Endereço</h1>
+            <br><br>
+            <label for="nome">CEP:</label>
+            <input type="text" id="cep" placeholder="_____-___" autofocus="true" required="Preencha o campo corretamente" /> <br><br>
+            <label for="nome">Rua:</label>
+            <input type="text" id="rua" placeholder="Digite sua Rua" autofocus="true" required="Preencha o campo corretamente" /> <br><br>
+            <label for="nome">Numero:</label>
+            <input type="text" id="num" placeholder="Número da residência" autofocus="true" required="Preencha o campo corretamente" /> <br><br>
+            <label for="nome">Complemento:</label>
+            <input type="text" id= "complemento" placeholder="(Opcional)" /> <br><br>
+            <label for="nome">Bairro:</label>
+            <input type="text" id="bairro" placeholder="Digite seu Bairro" autofocus="true" required="Preencha o campo corretamente" /> <br><br>
+            <label for="nome">Estado:</label>
+            <input type="text" id="estado" placeholder="Digite seu Estado" autofocus="true" required="Preencha o campo corretamente" /> <br><br>
+            <label for="nome">Cidade:</label>
+            <input type="text" id="cidade" placeholder="Digite sua cidade" autofocus="true" required="Preencha o campo corretamente" /> <br><br>
+
+            <br><br>
+            <hr>
+            <h1 class="acesso">Acesso</h1>
+            <br><br>
+            <label for="nome">Login:</label>
+            <input type="text" name="login" id="login" placeholder="Login" autofocus="true"  required="Preencha o campo corretamente" maxlength="6"/> <br><br>
+            <label for="nome">Senha:</label>
+            <input type="password" name="senha" id="senha" name="senha" placeholder="Senha" autofocus="true" required="Preencha o campo corretamente" maxlength="8"/> <br><br>
+            <label for="nome">Confirmar senha:</label>
+            <input type="password" id="senhaC" name="senhaC" placeholder="Confirmar senha" autofocus="true" required="Preencha o campo corretamente" maxlength="8"/> <br><br>
+           <input type="submit" onclick="return validarSenha()" value="Cadastrar" class="btn"/>
+           
+        </form>
+    </div>
+       
+
+</body>
+</html>
